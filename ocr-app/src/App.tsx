@@ -42,20 +42,21 @@ function AppRouter() {
                             <Link to="/user/">ユーザー</Link>
                         </li>
                         <li>
-                            <Link to={"/signin"}>サインイン</Link>
+                            <Link to='/signin'>サインイン</Link>
                         </li>
                         <li>
-                            <Link to={"/list"}>リスト</Link>
+                            <Link to="/list">リスト</Link>
                         </li>
                         <li>
-                            <Link to={"/summary"}>まとめ</Link>
+                            <Link to="/summary">まとめ</Link>
                         </li>
                         <li>
-                            <Link to={"/register"}>登録</Link>
+                            <Link to="/register">登録</Link>
                         </li>
                     </ul>
                 </nav>
             </Drawer>
+            <div>Receipt App</div>
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/user' element={<User />} />
