@@ -1,6 +1,7 @@
 import { Button, Card, CardContent } from '@mui/material';
 import { Container } from '@mui/system';
 import React from 'react';
+import List from './List';
 
 export default function Home() {
     return (
@@ -12,8 +13,10 @@ export default function Home() {
                     <div>10000円</div>
                 </CardContent>
             </Card>
-            <div></div>
             <Button variant='contained' onClick={() => window.location.href = '/register'}>登録</Button>
+
+            <h3>最近の記録</h3>
+            <List count={5} />
         </Container>
     );
 }

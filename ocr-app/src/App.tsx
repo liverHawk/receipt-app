@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
-import { Avatar, Button, Container, Drawer, IconButton } from "@mui/material"
+import { Avatar, Container, Drawer, IconButton } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import Home from './docs/Home';
 import User from './docs/User';

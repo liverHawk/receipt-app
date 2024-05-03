@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-export default function List() {
+const List: FC<{ count?: number }> = (props) => {
+    const Part: ReactNode[] = []
+
+    const count = props.count == null ? 30 : (props.count === 0 ? 10 : props.count)
+
+    for (var i = 1; i <= count; i++) {
+        Part.push(
+            <li>
+                <Link to={`/list/${i}`}>item{i}</Link>
+            </li>
+        )
+    }
+
     return (
         <>
             <ul>
-                <li>
-                    <Link to={"/list/1"}>item1</Link>
-                </li>
-                <li>
-                    <Link to={"/list/2"}>item2</Link>
-                </li>
+                {
+                    Part.map((node) => node)
+                }
             </ul>
             <Outlet />
         </>
 
     )
 }
+
+export default List;
