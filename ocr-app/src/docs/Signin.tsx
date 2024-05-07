@@ -1,11 +1,12 @@
 import { Button } from '@mui/material';
-import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import {
     Link,
     // Routes, 
     // Route 
 } from 'react-router-dom';
+
 
 const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
@@ -14,7 +15,7 @@ const LoginButton = () => {
 
 const LogoutButton = () => {
     const { logout } = useAuth0();
-    return <Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</Button>
+    return <Button onClick={() => logout({ logoutParams: { returnTo: `${window.location.origin}` } })}>Logout</Button>
 }
 
 // const Profile = () => {
@@ -26,12 +27,7 @@ const LogoutButton = () => {
 export default function Signin() {
 
     return (
-        <Auth0Provider
-            domain={process.env.REACT_APP_AUTH0_ISSURE_BASE_URL!}
-            clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
-            authorizationParams={{ redirect_uri: window.location.origin }}
-        >
-
+        <>
             <nav>
                 <ul>
                     <li>
@@ -47,7 +43,6 @@ export default function Signin() {
             {/* <Routes>
                 <Route path='/profile' element={<Profile />} />
             </Routes> */}
-
-        </Auth0Provider>
+        </>
     );
 }

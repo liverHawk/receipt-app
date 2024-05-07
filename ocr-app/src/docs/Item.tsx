@@ -2,6 +2,11 @@ import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
+type ItemProps = {
+    open: boolean;
+
+}
+
 const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
